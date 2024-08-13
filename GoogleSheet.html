@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="GoogleSheet.css">
+</head>
+<body>
+	<div class="container">
+		<form method="post" action="https://script.google.com/macros/s/AKfycbxko9FY27SKqSpfgLPfMdeGsXz52FOwxH18AyGUueRs3AhWEHSTJpVBcwEirBSSaORQ/exec" name="contact-form">
+			<div style="display: flex; justify-content: center;">
+				<img src="./ASSET/LOGO ARTATI.png" width="300">
+			</div>
+			<input type="hidden" name="Tanggal" id="tanggal">
+			<input type="text" name="Nama" placeholder="Nama">
+			<!-- Dropdown for Jenis Pengunjung -->
+			<select name="JenisPengunjung">
+				<option value="" disabled selected>Jenis Pengunjung</option>
+				<option value="Mahasiswa">Mahasiswa</option>
+				<option value="Dosen">Dosen</option>
+				<option value="Peneliti">Peneliti</option>
+				<option value="Umum">Umum</option>
+			</select>
+			
+			<!-- Dropdown for Asal Lembaga -->
+			<select name="AsalLembaga">
+				<option value="" disabled selected>Asal Lembaga</option>
+				<option value="Universitas">Universitas</option>
+				<option value="Lembaga Penelitian">Lembaga Penelitian</option>
+				<option value="Umum">Umum</option>
+				<option value="Lainnya">Lainnya</option>
+			</select>
+			<input type="text" name="Institusi" placeholder="Institusi">
+			<input type="text" name="NomorTelepon" placeholder="Nomor Telepon">
+			<input type="email" name="Email" placeholder="Email">
+			<textarea name="KesanPesan" rows="7" placeholder="Kesan Pesan"></textarea>
+			<div style="display: flex; justify-content: center;">
+				<input type="submit" value="Selesai" id="submit">
+			</div>
+		</form>
+	</div>
+	<script src="GoogleSheet.js"></script>
+	<script>
+		const today = new Date().toISOString().split('T')[0];
+		document.getElementById('tanggal').value = today;
+	</script>
+</body>
+</html>
